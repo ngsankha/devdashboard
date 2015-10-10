@@ -1,0 +1,49 @@
+body {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15em;
+  padding-right: 15em;
+  padding-top: 10px;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+canvas {
+  display: inline;
+}
+
+.canvas-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+a {
+  color: #3b8bba;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 940px) {
+  .container {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  canvas {
+    width: 100%;
+  }
+}
