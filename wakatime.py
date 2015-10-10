@@ -5,7 +5,7 @@ prefix = 'https://wakatime.com/api/v1/'
 with open('API_KEY', 'r') as f:
   api_key = f.read().strip()
 today = date.today()
-week_old = datetime.combine(today, datetime.min.time()) - timedelta(days=7)
+week_old = datetime.combine(today, datetime.min.time()) - timedelta(days=6)
 
 url = prefix + 'users/current/summaries?start=' + week_old.strftime('%m/%d/%Y') + '&end=' + today.strftime('%m/%d/%Y') + '&api_key=' + api_key
 print "Making HTTP Request"
