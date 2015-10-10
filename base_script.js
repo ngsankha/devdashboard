@@ -9,4 +9,4 @@ var myLineChart = new Chart(ctx).Line(data, {
     return result;
   }
 });
-document.getElementById("summary").innerHTML = "I have coded for " + totalTime + " in the last week in mostly " + languages.join(", ");
+document.getElementById("summary").innerHTML = "I have coded for " + totalTime + " in the last week in mostly " + languages.join(", ") + ".";
