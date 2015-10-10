@@ -47,7 +47,34 @@ for day in json_data['data']:
   day_data = { 'languages': top_languages, 'date': human_date, 'total': total_sec, 'total_str': total_str }
   days.append(day_data)
 
-print "Dumping JSON"
-data = { 'days': days, 'summary': { 'total': total, 'languages': top3(languages) } }
-with open('summary.json', 'w') as f:
-  json.dump(data, f)
+# We could dump `summary` as JSON. It would be meaningful.
+summary = { 'days': days, 'summary': { 'total': total, 'languages': top3(languages) } }
+
+out = { 'labels': [], 'datasets': [] }
+dataset = { 'data': [],
+  'time': [],
+  'languages': [],
+  'label': 'Dataset',
+  'fillColor': 'rgba(151,187,205,0.2)',
+  'strokeColor': 'rgba(151,187,205,1)',
+  'pointColor': 'rgba(151,187,205,1)',
+  'pointStrokeColor': '#fff',
+  'pointHighlightFill': '#fff',
+  'pointHighlightStroke': 'rgba(151,187,205,1)'
+}
+
+for day in summary['days']:
+  out['labels'].append(day['date'])
+  dataset['data'].append(day['total'] / 3600)
+  dataset['time'].append(day['total_str'])
+  dataset['languages'].append(day['languages'])
+out['datasets'].append(dataset)
+
+out_str = json.dumps(out)
+m, s = divmod(summary['summary']['total'], 60)
+h, m = divmod(m, 60)
+print "Writing script"
+with open('_script.js', 'w') as f:
+  f.write("var data = %s;\n" % out_str)
+  f.write("var totalTime = \"%d hours %02d minutes\";\n" % (h, m))
+  f.write("var languages = %s;\n" % json.dumps(summary['summary']['languages']))
