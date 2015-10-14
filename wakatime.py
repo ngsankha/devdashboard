@@ -1,3 +1,4 @@
+from __future__ import division
 import urllib2, json, calendar, operator
 from datetime import date, datetime, timedelta
 
