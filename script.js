@@ -1,6 +1,3 @@
-var data = {"labels": ["18 October", "19 October", "20 October", "21 October", "22 October", "23 October", "24 October"], "datasets": [{"languages": [["JavaScript", "Ruby"], [], [], [], [], [], []], "pointHighlightFill": "#fff", "fillColor": "rgba(151,187,205,0.2)", "pointHighlightStroke": "rgba(151,187,205,1)", "time": ["58 minutes", "0 minutes", "0 minutes", "0 minutes", "0 minutes", "0 minutes", "0 minutes"], "pointColor": "rgba(151,187,205,1)", "strokeColor": "rgba(151,187,205,1)", "pointStrokeColor": "#fff", "data": [0.9877777777777778, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "label": "Dataset"}]};
-var totalTime = "0 hours 59 minutes";
-var languages = ["JavaScript", "Ruby"];
 var ctx = document.getElementById("chart").getContext("2d");
 var myLineChart = new Chart(ctx).Line(data, {
   tooltipTemplate: function(valuesObject){
