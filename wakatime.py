@@ -1,10 +1,18 @@
 from __future__ import division
 import urllib2, json, calendar, operator
 from datetime import date, datetime, timedelta
+import ConfigParser
+import os
+
+config = ConfigParser.ConfigParser()
+if os.path.exists('./API_KEY'):
+    config.read('./API_KEY')
+else:
+    print 'Sorry API_KEY not found !'
+    os._exit(1)
 
 prefix = 'https://wakatime.com/api/v1/'
-with open('API_KEY', 'r') as f:
-  api_key = f.read().strip()
+api_key = config.get('API', 'key')
 today = date.today()
 week_old = datetime.combine(today, datetime.min.time()) - timedelta(days=6)
 
