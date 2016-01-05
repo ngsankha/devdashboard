@@ -1,6 +1,7 @@
 from __future__ import division
 import urllib2, json, calendar, operator
 from datetime import date, datetime, timedelta
+from dateutil.parser import parse
 import ConfigParser
 import os
 
@@ -36,7 +37,7 @@ def top3(languages):
 
 print "Processing data"
 for day in json_data['data']:
-  curr_date = date.fromtimestamp(int(day['range']['start']))
+  curr_date = parse(day['range']['start'])
   total_sec = day['grand_total']['total_seconds']
   total += total_sec
   total_str = day['grand_total']['text']
