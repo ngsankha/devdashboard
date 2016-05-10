@@ -1,6 +1,6 @@
-var data = {"labels": ["2 May", "3 May", "4 May", "5 May", "6 May", "7 May", "8 May"], "datasets": [{"languages": [["Ruby", "JavaScript", "PHP"], ["Ruby", "JavaScript"], ["Ruby", "JavaScript", "Bash"], ["Ruby", "Bash", "Other"], [], ["Rust", "Markdown", "Other"], ["Ruby", "Java", "Python"]], "pointHighlightFill": "#fff", "fillColor": "rgba(151,187,205,0.2)", "pointHighlightStroke": "rgba(151,187,205,1)", "time": ["1 hr 42 mins", "0 secs", "35 mins", "34 mins", "0 secs", "5 hrs 8 mins", "1 hr 13 mins"], "pointColor": "rgba(151,187,205,1)", "strokeColor": "rgba(151,187,205,1)", "pointStrokeColor": "#fff", "data": [1.7358333333333333, 0.0044444444444444444, 0.6066666666666667, 0.5847222222222223, 0.0, 5.137222222222222, 1.2422222222222221], "label": "Dataset"}]};
-var totalTime = "9 hours 18 minutes";
-var languages = ["Rust", "Ruby", "JavaScript"];
+var data = {"labels": ["3 May", "4 May", "5 May", "6 May", "7 May", "8 May", "9 May"], "datasets": [{"languages": [["Ruby", "JavaScript"], ["Ruby", "JavaScript", "Bash"], ["Ruby", "Bash", "Other"], [], ["Rust", "Markdown", "Other"], ["Ruby", "Python", "Java"], ["Bash", "Ruby"]], "pointHighlightFill": "#fff", "fillColor": "rgba(151,187,205,0.2)", "pointHighlightStroke": "rgba(151,187,205,1)", "time": ["0 secs", "35 mins", "34 mins", "0 secs", "5 hrs 8 mins", "1 hr 30 mins", "23 mins"], "pointColor": "rgba(151,187,205,1)", "strokeColor": "rgba(151,187,205,1)", "pointStrokeColor": "#fff", "data": [0.0044444444444444444, 0.6066666666666667, 0.5847222222222223, 0.0, 5.137222222222222, 1.5266666666666666, 0.3852777777777778], "label": "Dataset"}]};
+var totalTime = "8 hours 14 minutes";
+var languages = ["Rust", "Ruby", "Bash"];
 var ctx = document.getElementById("chart").getContext("2d");
 var myLineChart = new Chart(ctx).Line(data, {
   tooltipTemplate: function(valuesObject){
